@@ -40,7 +40,16 @@ Brewtroller.init = function () {
   });
   $("#programModalButton").on("click", function () {
 	  Brewtroller.program.getProgramList();
-  })
+  });
+  $("#outputStatus").on("click", function () {
+	 if($("#outputSave").attr("disabled")) {
+		 $("#outputSave").removeAttr("disabled");
+		 $("#valveSelect").removeAttr("disabled");
+	 }else{
+		 $("#outputSave").attr("disabled", true);
+		 $("#valveSelect").attr("disabled", true);
+	 }
+  });
   $("#outputSave").on("click", function () {
 	  var outputBitmask = [],
   	  bit;

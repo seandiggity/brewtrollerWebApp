@@ -76,3 +76,9 @@
 	font-weight: bold;
 	font-size: 2em;
 }
+.vesselPanelTable td:nth-child(1) {
+	padding-left: 50px;
+}
+.boilPanelTable td:nth-child(1) {
+	padding-left: 40px;
+}

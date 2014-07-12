@@ -38,7 +38,7 @@
     
     function printTemperature(id, temperature)
     {
-        $(id).html('<small class="text-muted">temp </small><span class="vesselTemp">' + (temperature == 4294934528 ? "N/A" : (temperature / 100.0 + '&deg;F</span> ')));
+        $(id).html('<span class="vesselTemp">' + (temperature == 4294934528 ? "N/A" : (temperature / 100.0 + '&deg;F</span> ')));
     }
     
     function printSetpoint(id, setpoint)
@@ -48,22 +48,22 @@
     
     function printHeatPower(id, heatPower)
     {
-        $(id).html('<small class="text-muted">heat power </small>' + (heatPower == 0 ? "Off" : heatPower == 100 ? '<span class="text text-danger">On</span>' : (heatPower + "%")));
+        $(id).html((heatPower == 0 ? "Off" : heatPower == 100 ? '<span class="text text-danger">On</span>' : (heatPower + "%")));
     }
     
 	function printVolume(id, volume)
     {
-        $(id).html('<small class="text-muted">volume </small>' + volume / 1000.0 + " Gal");
+        $(id).html(volume / 1000.0 + " Gal");
     }
     
     function printTargetVolume(id, target)
     {
-        $(id).html('<small class="text-muted">target volume </small>' + target / 1000.0 + " Gal");
+        $(id).html(target / 1000.0 + " Gal");
     }
     
     function printFlowRate(id, flowrate)
     {
-        $(id).html('<small class="text-muted">flow rate </small>' + flowrate + " Gal/min");
+        $(id).html(flowrate + " Gal/min");
     }
 	function printBoilControl(id, data)
 	{
@@ -191,13 +191,35 @@
             	<div class="panel panel-default vesselPanel">
                     <div class="panel-heading"><h3 class="panel-title">Hot Liquor</h3></div>
                     <div class="panel-body">
-                    	<div id="hltTempSet"><span id="div_hltTemperature"></span> <span id="div_hltSetpoint"></span></div>
+                    	<table class="vesselPanelTable">
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>temp</small></td>
+                    			<td style="padding-left: 10px;"><span id="div_hltTemperature"></span> <span id="div_hltSetpoint"></span></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>heat power</small></td>
+                    			<td style="padding-left: 10px;"><div id="div_hltHeatPower"></div></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>volume</small></td>
+                    			<td  style="padding-left: 10px;"><div id="div_hltVolume"></div></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>target volume</small></td>
+                    			<td style="padding-left: 10px;"><div id="div_hltTargetVolume"></div></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>flow rate</small></td>
+                    			<td style="padding-left: 10px;"><div id="div_hltFlowRate"></div></td>
+                    		</tr>
+                    	</table>
+<!--                     	<div id="hltTempSet"><span id="div_hltTemperature"></span> <span id="div_hltSetpoint"></span></div> -->
 <!--                         <div id="div_hltTemperature"></div> -->
 <!--                         <div id="div_hltSetpoint"></div> -->
-                        <div id="div_hltHeatPower"></div>
-                        <div id="div_hltVolume"></div>
-                        <div id="div_hltTargetVolume"></div>
-                        <div id="div_hltFlowRate"></div>
+<!--                         <div id="div_hltHeatPower"></div> -->
+<!--                         <div id="div_hltVolume"></div> -->
+<!--                         <div id="div_hltTargetVolume"></div> -->
+<!--                         <div id="div_hltFlowRate"></div> -->
                         <div class="input-group">
 					      <span class="input-group-btn">
 					        <button id="hltTempSetBtn" class="btn btn-default" type="button"">Set Temp</button>
@@ -216,13 +238,35 @@
                     <div class="panel-body">
                         <div class="row timer-top">
                         <div class="col-sm-12">
-                        <div id="mashTempSet"><span id="div_mashTemperature"></span> <span id="div_mashSetpoint"></span></div>
-<!--                         <div id="div_mashTemperature"></div> -->
-<!--                         <div id="div_mashSetpoint"></div> -->
-                        <div id="div_mashHeatPower"></div>
-                        <div id="div_mashVolume"></div>
-                        <div id="div_mashTargetVolume"></div>
-                        <div id="div_mashFlowRate"></div>
+                        <table class="vesselPanelTable">
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>temp</small></td>
+                    			<td style="padding-left: 10px;"><span id="div_mashTemperature"></span> <span id="div_mashSetpoint"></span></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>heat power</small></td>
+                    			<td style="padding-left: 10px;"><div id="div_mashHeatPower"></div></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>volume</small></td>
+                    			<td  style="padding-left: 10px;"><div id="div_mashVolume"></div></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>target volume</small></td>
+                    			<td style="padding-left: 10px;"><div id="div_mashTargetVolume"></div></td>
+                    		</tr>
+                    		<tr>
+                    			<td class="text-muted pull-right"><small>flow rate</small></td>
+                    			<td style="padding-left: 10px;"><div id="div_mashFlowRate"></div></td>
+                    		</tr>
+                    	</table>
+<!--                         <div id="mashTempSet"><span id="div_mashTemperature"></span> <span id="div_mashSetpoint"></span></div> -->
+<!-- <!--                         <div id="div_mashTemperature"></div> --> 
+<!-- <!--                         <div id="div_mashSetpoint"></div> -->
+<!--                         <div id="div_mashHeatPower"></div> -->
+<!--                         <div id="div_mashVolume"></div> -->
+<!--                         <div id="div_mashTargetVolume"></div> -->
+<!--                         <div id="div_mashFlowRate"></div> -->
                         <div class="input-group">
 					      <span class="input-group-btn">
 					        <button id="mashTempSetBtn" class="btn btn-default" type="button"">Set Temp</button>
@@ -342,16 +386,38 @@
 						<div class="row timer-top">
 						<div class="col-sm-12">
 							<div class="row">
-								<div class="col-sm-6">
-									<div id="kettleTempSet"><span id="div_kettleTemperature"></span> <span id="div_kettleSetpoint"></span></div>
+								<div class="col-sm-7">
+								<table>
+		                    		<tr>
+		                    			<td class="text-muted pull-right"><small>temp</small></td>
+		                    			<td style="padding-left: 10px;"><div id="kettleTempSet"><span id="div_kettleTemperature"></span> <span id="div_kettleSetpoint"></span></td>
+		                    		</tr>
+		                    		<tr>
+		                    			<td class="text-muted pull-right"><small>heat power</small></td>
+		                    			<td style="padding-left: 10px;"><div id="div_kettleHeatPower"></div></td>
+		                    		</tr>
+		                    		<tr>
+		                    			<td class="text-muted pull-right"><small>volume</small></td>
+		                    			<td  style="padding-left: 10px;"><div id="div_kettleVolume"></div></td>
+		                    		</tr>
+		                    		<tr>
+		                    			<td class="text-muted pull-right"><small>target volume</small></td>
+		                    			<td style="padding-left: 10px;"><div id="div_kettleTargetVolume"></div></td>
+		                    		</tr>
+		                    		<tr>
+		                    			<td class="text-muted pull-right"><small>flow rate</small></td>
+		                    			<td style="padding-left: 10px;"><div id="div_kettleFlowRate"></div></td>
+		                    		</tr>
+                    		</table>
+<!-- 									<div id="kettleTempSet"><span id="div_kettleTemperature"></span> <span id="div_kettleSetpoint"></span></div> -->
 	<!-- 								<div id="div_kettleTemperature"></div> -->
 	<!-- 								<div id="div_kettleSetpoint"></div> -->
-									<div id="div_kettleHeatPower"></div>
-									<div id="div_kettleVolume"></div>
-									<div id="div_kettleTargetVolume"></div>
-									<div id="div_kettleFlowRate"></div>
+<!-- 									<div id="div_kettleHeatPower"></div> -->
+<!-- 									<div id="div_kettleVolume"></div> -->
+<!-- 									<div id="div_kettleTargetVolume"></div> -->
+<!-- 									<div id="div_kettleFlowRate"></div> -->
 								</div>
-								<div class="col-sm-6">
+								<div class="col-sm-5">
 									<div class="btn-group-vertical btn-group-sm" data-toggle="buttons">
 									  <label class="btn btn-default">
 									  	<input type="radio" class="boilControl" name="boilOff" id="boilOff">Kettle Off</input>
@@ -560,12 +626,12 @@
                 <div class="panel panel-default">
 				  <div class="panel-heading clearfix">
 				  	<h3 class="panel-title pull-left">
-				  		<a data-toggle="collapse" href="#outputStat">
+				  		<a data-toggle="collapse" href="#outputStat" id="outputStatus">
 				  		Individual Valve Output Status
 				  		</a>
 				  	</h3>
-				  	<button id="outputSave" type="button" class="btn btn-default pull-right">Save Output Settings</button>
-				  	<select id="valveSelect" class="pull-right form-control">
+				  	<button id="outputSave" type="button" class="btn btn-default pull-right" disabled>Save Output Settings</button>
+				  	<select id="valveSelect" class="pull-right form-control" disabled>
 				  		<option value="Select Profile">Select Profile</option>
 				  	</select>
 				  </div>
