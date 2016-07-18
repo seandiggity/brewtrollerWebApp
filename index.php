@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/slider.css">
 <!-- User Defined CSS Preferences  -->
 <link rel="stylesheet" href="css/userprefs.css">
+<link rel="stylesheet" href="css/bootswatch-slate.css">
 
 <!--  Pulled Font-Awesome for NHC with no Internet Access -->
 <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
