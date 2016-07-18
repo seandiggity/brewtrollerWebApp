@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>WebAppTroller - A web interface for Brewtroller</title>
+<title>MakeHaven HERMS - Brewtroller Web App</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<!-- Optional theme -->
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/jquery.sidr.light.css">
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+<link rel="stylesheet" href="css/bootswatch-slate.css">
+<link rel="stylesheet" href="css/jquery.sidr.dark.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/slider.css">
 <!-- User Defined CSS Preferences  -->
 <link rel="stylesheet" href="css/userprefs.css">
-<link rel="stylesheet" href="css/bootswatch-slate.css">
-
-<!--  Pulled Font-Awesome for NHC with no Internet Access -->
-<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/filereader.js"></script>
 <script src="js/jquery.xml2json.js"></script>
-<script src="js/bootstrap-slider.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
 
 <script>
 	function printAlarm(id, status)

@@ -46,7 +46,7 @@
 	width: 140px;
 	height: 30px;
 }
-.btn-Valves input[type="radio"]:checked+label {
+/*.btn-Valves input[type="radio"]:checked+label {
   color: #fff;
   background-color: #d9534f;
   border-color: #d43f3a;
@@ -55,7 +55,7 @@
   color: #333;
   background-color: #fff;
   border-color: #ccc;
-}
+}*/
 .vesselSet {
 	font-weight: bold;
 }
@@ -81,4 +81,14 @@
 }
 .boilPanelTable td:nth-child(1) {
 	padding-left: 40px;
+}
+.panel-default > .panel-heading
+{
+  color: #c8c8c8;
+  background-image: none;
+  background-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0.6);
+  border-right-color: rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(0, 0, 0, 0.6);
+  border-left-color: rgba(0, 0, 0, 0.6);
 }
